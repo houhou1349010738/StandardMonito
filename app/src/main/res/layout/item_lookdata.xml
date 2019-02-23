@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    >
+   <TextView
+       android:id="@+id/iv_look_zhibiao"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_weight="5"
+       android:layout_marginTop="@dimen/base13dp"
+       android:layout_marginLeft="@dimen/base17dp"
+       android:textSize="@dimen/base15dp"
+       android:textColor="#000000"
+       android:text="除砂量_I系列"
+       android:gravity="center_vertical"
+       android:maxLines="2"
+       />
+
+    <TextView
+        android:id="@+id/iv_look_shuju"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:layout_marginTop="@dimen/base12dp"
+        android:textColor="#5191d2"
+        android:textSize="@dimen/base11dp"
+        android:text="10000"
+        android:gravity="center"
+        android:maxLines="2"
+        />
+
+    <TextView
+        android:id="@+id/iv_look_panduan"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/base100dp"
+        android:layout_marginTop="@dimen/base12dp"
+        android:textSize="@dimen/base13dp"
+        android:text="通过"
+        android:gravity="center"
+        />
+</LinearLayout>

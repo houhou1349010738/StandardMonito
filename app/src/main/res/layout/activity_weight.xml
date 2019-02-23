@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:layout_height="match_parent">
+    <include layout="@layout/toolbar_hitch" android:id="@+id/asdwdaw"/>
+    <TextView
+        android:id="@+id/dawwwa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="称重数据列表"
+        android:textColor="#333333"
+        android:textSize="@dimen/base14dp"
+        android:layout_marginTop="@dimen/base12dp"
+        android:layout_marginLeft="@dimen/base11dp"
+        android:layout_below="@+id/asdwdaw"
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/daedwadaw"
+        android:layout_marginTop="@dimen/base12dp"
+        android:layout_below="@+id/dawwwa"
+        android:background="@drawable/xian"
+        />
+    <ListView
+        android:id="@+id/list_weight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/daedwadaw"
+        >
+    </ListView>
+</RelativeLayout>

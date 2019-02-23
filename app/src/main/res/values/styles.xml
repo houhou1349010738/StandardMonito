@@ -1,0 +1,70 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="@style/BaseAppTheme">
+    </style>
+    <style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--Status bar color-->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--Window color-->
+        <item name="android:windowBackground">@color/window</item>
+    </style>
+    <style name="mypopwindow_anim_style">
+
+        <item name="android:windowEnterAnimation">@anim/menu_up</item>        <!-- 指定显示的动画xml  -->
+
+        <item name="android:windowExitAnimation">@anim/menu_down</item>       <!-- 指定消失的动画xml  -->
+    </style>
+<style name="radio">
+    <item name="android:textSize">@dimen/base14dp</item>
+    <item name="android:ellipsize">marquee</item>
+    <item name="android:gravity">center</item>
+    <item name="android:background">@drawable/transparent</item>
+    <item name="android:paddingTop">@dimen/base1dp</item>
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">fill_parent</item>
+    <item name="android:button">@null</item>
+    <item name="android:singleLine">true</item>
+    <item name="android:drawablePadding">@dimen/base1dp</item>
+    <item name="android:layout_weight">1.0</item>
+</style>
+    <style name="edit">
+        <item name="android:layout_width">@dimen/base95dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/editext_shape_one</item>
+        <item name="android:textSize">@dimen/base10dp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    <style name="edit2">
+        <item name="android:layout_width">@dimen/base95dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/editext_shape_two</item>
+        <item name="android:textSize">@dimen/base10dp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    <style name="Ibutton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/calendar</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_marginRight">3dp</item>
+    </style>
+    <style name="Ibutton2">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/ledger</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_marginRight">3dp</item>
+    </style>
+    <style name="zidingyi">
+        <!-- 设置是否透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 背景 -->
+        <item name="android:background">@null</item>
+        <!-- 窗口背景 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 点击空白部分activity不消失 -->
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+</resources>

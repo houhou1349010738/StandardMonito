@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_enlist_htmc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/base6dp"
+            android:layout_marginLeft="@dimen/base18dp"
+            android:textColor="#555555"
+            android:textSize="@dimen/base13dp"
+            />
+        <TextView
+            android:id="@+id/tv_enlist_gxsj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/base6dp"
+            android:layout_marginLeft="@dimen/base18dp"
+            android:textColor="#555555"
+            android:textSize="@dimen/base13dp"
+            android:layout_below="@+id/tv_enlist_htmc"
+            />
+        <TextView
+            android:id="@+id/tv_enlist_yjcz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/base6dp"
+            android:layout_marginLeft="@dimen/base18dp"
+            android:textColor="#555555"
+            android:textSize="@dimen/base13dp"
+            android:layout_below="@+id/tv_enlist_gxsj"
+            />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/base3dp"
+        android:layout_below="@+id/tv_enlist_yjcz"
+        />
+</LinearLayout>

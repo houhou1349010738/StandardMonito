@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/location_tips"
+    >
+    <TextView
+        android:id="@+id/location_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:text="车速:"
+        />
+    <TextView
+        android:id="@+id/fxain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="方向:"
+        android:maxWidth="200.0dip"
+        android:minWidth="40.0dip"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/location_tips"
+        android:layout_marginTop="@dimen/base10dp"
+        />
+    <Button
+        android:id="@+id/jiankong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00bcd4"
+        android:text="监控"
+        android:textColor="#ffffff"
+         android:layout_marginTop="@dimen/base15dp"
+        android:layout_below="@+id/fxain"
+        android:layout_marginLeft="@dimen/base30dp"
+        android:layout_marginRight="@dimen/base30dp"
+        />
+</RelativeLayout>

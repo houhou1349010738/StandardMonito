@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_phenom_gzxx"
+            android:layout_marginTop="@dimen/base16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/base8dp"
+            android:text="故障现象:"
+            android:textColor="#000000"
+            android:textSize="@dimen/base13dp"
+            />
+        <TextView
+            android:id="@+id/tv_hitch_zglb"
+            android:layout_marginTop="@dimen/base16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/base8dp"
+            android:text="故障类别:"
+            android:textColor="#000000"
+            android:textSize="@dimen/base13dp"
+            />
+        <TextView
+            android:id="@+id/tv_hitch_gzbw"
+            android:layout_marginTop="@dimen/base16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/base8dp"
+            android:text="故障部位:"
+            android:textColor="#000000"
+            android:textSize="@dimen/base13dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/base4dp"
+            />
+</LinearLayout>

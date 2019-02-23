@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    >
+    <include layout="@layout/toolbar" android:id="@+id/addsss"/>
+    <com.smartwasser.yunzhishui.view.RefreshLayout
+        android:id="@+id/swipe_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/addsss"
+        android:layout_marginTop="@dimen/base4dp"
+        >
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    </ListView>
+    </com.smartwasser.yunzhishui.view.RefreshLayout>
+</RelativeLayout>

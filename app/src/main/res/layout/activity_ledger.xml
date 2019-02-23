@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    >
+    <include layout="@layout/toolbar_hitch" android:id="@+id/inc"/>
+    <RelativeLayout
+        android:id="@+id/lafief"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base43dp"
+        android:layout_below="@id/inc"
+        android:background="#ffffff"
+        >
+    <TextView
+        android:id="@+id/tvi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:text="重要设备列表"
+        android:layout_centerVertical="true"
+        android:textSize="@dimen/base13dp"
+        android:layout_marginLeft="@dimen/base10dp"
+        android:textColor="#333333"
+        />
+    </RelativeLayout>
+    <com.smartwasser.yunzhishui.view.RefreshLayout
+        android:id="@+id/swipe_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lafief"
+        android:layout_marginTop="@dimen/base4dp"
+        >
+    <ListView
+        android:id="@+id/list_ledger"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#f2f2f2"
+        android:dividerHeight="@dimen/base7dp"
+        android:background="#ffffff"
+        >
+    </ListView>
+    </com.smartwasser.yunzhishui.view.RefreshLayout>
+</RelativeLayout>

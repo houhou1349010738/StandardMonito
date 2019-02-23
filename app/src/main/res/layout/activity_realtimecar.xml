@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    >
+    <include layout="@layout/toolbar" android:id="@+id/eqer"/>
+    <TextView
+        android:id="@+id/iedfs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择车辆"
+        android:textSize="@dimen/base15dp"
+        android:layout_marginLeft="@dimen/base10dp"
+        android:layout_marginTop="@dimen/base12dp"
+        android:layout_below="@+id/eqer"
+        />
+    <ImageView
+        android:id="@+id/fas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iedfs"
+        android:layout_marginTop="@dimen/base12dp"
+        android:background="@drawable/xian"
+        />
+    <GridView
+        android:id="@+id/grid_carzu"
+        android:layout_below="@+id/fas"
+        android:layout_marginTop="@dimen/base10dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base200dp"
+        android:numColumns="2"
+        >
+    </GridView>
+    <GridView
+        android:id="@+id/grid_car"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/grid_carzu"
+        android:numColumns="3"
+        android:background="#ededed"
+        >
+    </GridView>
+</RelativeLayout>
