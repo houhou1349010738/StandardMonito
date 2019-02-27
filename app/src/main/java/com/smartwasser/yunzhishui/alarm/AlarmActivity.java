@@ -81,6 +81,14 @@ public class AlarmActivity extends BaseActivity {
                 }
             }
         });
+
+        button_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
     }
 
     @Override

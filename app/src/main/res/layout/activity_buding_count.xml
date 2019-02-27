@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <include layout="@layout/toolbar" android:id="@+id/lasdiueue"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#1生产线用电量月报表"
+        android:layout_gravity="center"
+        android:textColor="#000"
+        android:layout_marginTop="@dimen/base10dp"
+        android:textSize="@dimen/base13dp"
+        />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/base5dp"
+        android:id="@+id/contentView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </LinearLayout>
+</LinearLayout>

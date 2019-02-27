@@ -43,4 +43,14 @@
         android:layout_marginRight="@dimen/base20dp"
         android:visibility="gone"
         />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/base19dp"
+           android:id="@+id/right_title"
+            android:textColor="#fff"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/base13dp"
+            />
 </RelativeLayout>

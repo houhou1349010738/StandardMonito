@@ -155,8 +155,28 @@
         <activity android:name=".productionactivity.PaymentEditActivity"/>
         <activity android:name=".alarm.StatisticsActivity"></activity>
         <activity android:name=".alarm.AlarmActivity"></activity>
-        <activity android:name=".datatable.WringTableActivity"></activity>
-        <activity android:name=".alarm.AlarmQueryActivity"></activity>
+        <activity android:name=".datatable.WringTableActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            ></activity>
+        <activity android:name=".alarm.AlarmQueryActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            ></activity>
+        <activity android:name=".statistics.ContInflowActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            ></activity>
+        <activity android:name=".statistics.InterestCountActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            >
+        </activity>
+        <activity android:name=".statistics.BuildCountActivity"></activity>
+
+        <activity android:name=".statistics.EcectrMothActivity"></activity>
+
+        <activity android:name=".statistics.ElectricCountActivity"></activity>
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
