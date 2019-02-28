@@ -7,7 +7,7 @@ import android.content.SharedPreferences;
  * Created by xiongmc on 2015/12/22.
  */
 public class App extends Application {
-
+    //测试提交
     /**
      * 全局Application，方便调用
      */
