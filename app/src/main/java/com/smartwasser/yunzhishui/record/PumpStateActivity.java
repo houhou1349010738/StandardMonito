@@ -1,12 +1,10 @@
-package com.smartwasser.yunzhishui.statistics;
+package com.smartwasser.yunzhishui.record;
 
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
-import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -20,17 +18,17 @@ import com.rmondjone.xrecyclerview.XRecyclerView;
 import com.smartwasser.yunzhishui.Activity.BaseActivity;
 import com.smartwasser.yunzhishui.R;
 import com.smartwasser.yunzhishui.alarmbean.CountBean;
-import com.smartwasser.yunzhishui.utils.ListViewUtils;
-import com.smartwasser.yunzhishui.utils.PopupWindowUtils;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
- * Created by 15810 on 2019/2/27.
+ * Created by 15810 on 2019/3/1.
  */
 
-public class ElectricCountActivity extends BaseActivity {
+public class PumpStateActivity extends BaseActivity {
     private List<String> mlist;
     private ListView minitListView;
     private LinearLayout contentView;
@@ -41,34 +39,23 @@ public class ElectricCountActivity extends BaseActivity {
     private WebView mWdebView;
     @Override
     protected int initContentView() {
-        return R.layout.activity_count_inflow;
+        return R.layout.activity_pump_state;
     }
 
     @Override
     protected void initView() {
-        contentView = findViewById(R.id.contentView);
+        contentView = findViewById(R.id.pump_contentView);
         button_menu= (ImageButton) findViewById(R.id.button_menu);
         mRightTitle = (TextView) findViewById(R.id.right_title);
         tv_toolbar= (TextView) findViewById(R.id.tv_toolbar);
         toolbar= (Toolbar) findViewById(R.id.toolbar);
-        mWdebView= (WebView) findViewById(R.id.chartshow_wb);
-            //进行webwiev的一堆设置
-            //开启本地文件读取（默认为true，不设置也可以）
+        mWdebView= (WebView) findViewById(R.id.pump_wb);
+        //进行webwiev的一堆设置
+        //开启本地文件读取（默认为true，不设置也可以）
         mWdebView.getSettings().setAllowFileAccess(true);
-            //开启脚本支持
+        //开启脚本支持
         mWdebView.getSettings().setJavaScriptEnabled(true);
         mWdebView.loadUrl("file:///android_asset/myechart.html");
-
-
-
-
-
-        button_menu.setVisibility(View.VISIBLE);
-        button_menu.setBackgroundResource(R.drawable.fanhu);
-        toolbar.setTitle("");
-        tv_toolbar.setText("厂用电量年统计");
-        setSupportActionBar(toolbar);
-        mRightTitle.setText("报表");
     }
 
     @Override
@@ -84,31 +71,16 @@ public class ElectricCountActivity extends BaseActivity {
                 finish();
             }
         });
-
     }
 
     @Override
     protected void initData() {
-        mWdebView.loadUrl("javascript:doCreatChart('bar',[89,78,77,44,66,83,56,26,97,56,12,48]);");
-
-
-        mRightTitle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String btnText = mRightTitle.getText().toString();
-                if ("报表".equals(btnText)){
-                    mWdebView.loadUrl("javascript:doCreatChart('bar',[89,78,77,44,66,83,56,26,97,56,12,48]);");
-                    contentView.setVisibility(View.GONE);
-                    mWdebView.setVisibility(View.VISIBLE);
-                    mRightTitle.setText("表格");
-                }else {
-                    contentView.setVisibility(View.VISIBLE);
-                    mWdebView.setVisibility(View.GONE);
-                    mRightTitle.setText("报表");
-                }
-
-            }
-        });
+        button_menu.setVisibility(View.VISIBLE);
+        button_menu.setBackgroundResource(R.drawable.fanhu);
+        toolbar.setTitle("");
+        tv_toolbar.setText("泵站运行状态查询");
+        setSupportActionBar(toolbar);
+        mRightTitle.setText("曲线");
     }
 
 
@@ -116,9 +88,11 @@ public class ElectricCountActivity extends BaseActivity {
         //构造假数据
         ArrayList<ArrayList<String>> mTableDatas = new ArrayList<ArrayList<String>>();
         ArrayList<String> titleList = new ArrayList<>();
-        titleList.add("     ");
-        titleList.add("本年度用电量");
-        titleList.add("与上一年度用电量差值");
+        titleList.add("序号");
+        titleList.add("水泵名称");
+        titleList.add("水泵编号");
+        titleList.add("运行状态");
+        titleList.add("时间");
         mTableDatas.add(titleList);
 
 
@@ -128,9 +102,13 @@ public class ElectricCountActivity extends BaseActivity {
         for (int i=0;i<20;i++){
             int num = (int) ((Math.random() * 9 + 1) * 100000);
             CountBean bean2 = new CountBean();
-            bean2.setT0("201"+i+2+"年度");
-            bean2.setT2(num+"");
-            bean2.setT1(num+"12"+i);
+            bean2.setT0(0+"");
+            bean2.setT3("停止状态");
+            bean2.setT2(i+"号泵");
+            bean2.setT1("北土城");
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
+            String t=format.format(new Date());
+            bean2.setT1(t);
             mRowDatas.add(bean2);
         }
 
@@ -268,7 +246,4 @@ public class ElectricCountActivity extends BaseActivity {
         DisplayUtil.screenWidthDip = DisplayUtil.px2dip(getApplicationContext(), dm.widthPixels);
         DisplayUtil.screenHightDip = DisplayUtil.px2dip(getApplicationContext(), dm.heightPixels);
     }
-
-
-
 }
