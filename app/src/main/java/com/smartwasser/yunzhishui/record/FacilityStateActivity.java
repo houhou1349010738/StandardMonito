@@ -55,7 +55,7 @@ public class FacilityStateActivity extends BaseActivity {
         mWdebView.getSettings().setAllowFileAccess(true);
         //开启脚本支持
         mWdebView.getSettings().setJavaScriptEnabled(true);
-        mWdebView.loadUrl("file:///android_asset/myechart.html");
+        mWdebView.loadUrl("file:///android_asset/myechart_type3.html");
     }
 
     @Override
@@ -69,6 +69,25 @@ public class FacilityStateActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+
+        mRightTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String btnText = mRightTitle.getText().toString();
+                if ("曲线".equals(btnText)){
+                    mWdebView.loadUrl("javascript:doCreatChart('line',[0,-1,0,0,-1,-2],['运行 1','停止 0','故障 -1'])");
+                    contentView.setVisibility(View.GONE);
+                    mWdebView.setVisibility(View.VISIBLE);
+                    mRightTitle.setText("表格");
+                }else {
+                    contentView.setVisibility(View.VISIBLE);
+                    mWdebView.setVisibility(View.GONE);
+                    mRightTitle.setText("曲线");
+                }
+
             }
         });
     }
@@ -122,12 +141,15 @@ public class FacilityStateActivity extends BaseActivity {
         Log.e("表格加载开始", "当前线程：" + Thread.currentThread());
         mLockTableView.setLockFristColumn(false) //是否锁定第一列
                 .setLockFristRow(true) //是否锁定第一行
-                .setMaxColumnWidth(100) //列最大宽度
+                .setMaxColumnWidth(200) //列最大宽度
                 .setMinColumnWidth(60) //列最小宽度
 //                .setColumnWidth(1,30) //设置指定列文本宽度
 //                .setColumnWidth(0,20) //设置指定列文本宽度
 //                .setColumnWidth(1,50)
 //                .setColumnWidth(0,50)
+                .setColumnWidth(1,200)
+                .setColumnWidth(0,200)
+                .setColumnWidth(2,200)
                 .setMinRowHeight(5)//行最小高度
                 .setMaxRowHeight(3)//行最大高度
                 .setTextViewSize(13) //单元格字体大小

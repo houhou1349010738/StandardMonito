@@ -122,12 +122,15 @@ public class WaterCountActivity extends BaseActivity {
         Log.e("表格加载开始", "当前线程：" + Thread.currentThread());
         mLockTableView.setLockFristColumn(false) //是否锁定第一列
                 .setLockFristRow(true) //是否锁定第一行
-                .setMaxColumnWidth(100) //列最大宽度
+                .setMaxColumnWidth(200) //列最大宽度
                 .setMinColumnWidth(60) //列最小宽度
 //                .setColumnWidth(1,30) //设置指定列文本宽度
 //                .setColumnWidth(0,20) //设置指定列文本宽度
 //                .setColumnWidth(1,50)
 //                .setColumnWidth(0,50)
+                .setColumnWidth(1,200)
+                .setColumnWidth(0,200)
+                .setColumnWidth(2,200)
                 .setMinRowHeight(5)//行最小高度
                 .setMaxRowHeight(3)//行最大高度
                 .setTextViewSize(13) //单元格字体大小

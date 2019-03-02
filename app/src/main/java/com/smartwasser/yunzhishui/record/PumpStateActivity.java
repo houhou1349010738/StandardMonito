@@ -103,12 +103,14 @@ public class PumpStateActivity extends BaseActivity {
             int num = (int) ((Math.random() * 9 + 1) * 100000);
             CountBean bean2 = new CountBean();
             bean2.setT0(0+"");
-            bean2.setT3("停止状态");
-            bean2.setT2(i+"号泵");
             bean2.setT1("北土城");
+            bean2.setT2(i+"号泵");
+            bean2.setT3("停止状态");
+
+
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
             String t=format.format(new Date());
-            bean2.setT1(t);
+            bean2.setT4(t);
             mRowDatas.add(bean2);
         }
 
@@ -118,6 +120,8 @@ public class PumpStateActivity extends BaseActivity {
             fieldList.add(mRowDatas.get(i).getT0());
             fieldList.add(mRowDatas.get(i).getT1());
             fieldList.add(mRowDatas.get(i).getT2());
+            fieldList.add(mRowDatas.get(i).getT3());
+            fieldList.add(mRowDatas.get(i).getT4());
             mTableDatas.add(fieldList);
         }
 
@@ -125,12 +129,12 @@ public class PumpStateActivity extends BaseActivity {
         Log.e("表格加载开始", "当前线程：" + Thread.currentThread());
         mLockTableView.setLockFristColumn(false) //是否锁定第一列
                 .setLockFristRow(true) //是否锁定第一行
-                .setMaxColumnWidth(100) //列最大宽度
+                .setMaxColumnWidth(200) //列最大宽度
                 .setMinColumnWidth(60) //列最小宽度
 //                .setColumnWidth(1,30) //设置指定列文本宽度
 //                .setColumnWidth(0,20) //设置指定列文本宽度
                 .setColumnWidth(1,50)
-                .setColumnWidth(0,50)
+                .setColumnWidth(0,200)
                 .setMinRowHeight(5)//行最小高度
                 .setMaxRowHeight(3)//行最大高度
                 .setTextViewSize(13) //单元格字体大小

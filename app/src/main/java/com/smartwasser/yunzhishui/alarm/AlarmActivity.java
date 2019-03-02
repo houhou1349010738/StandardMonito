@@ -53,6 +53,7 @@ public class AlarmActivity extends BaseActivity {
         mListView = findViewById(R.id.wraing_list);
         button_menu.setVisibility(View.VISIBLE);
         toolbar.setTitle("");
+        button_menu.setBackgroundResource(R.drawable.fanhu);
         tv_toolbar.setText("预警报警");
         setSupportActionBar(toolbar);
     }

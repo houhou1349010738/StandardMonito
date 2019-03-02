@@ -47,6 +47,7 @@ public class AlarmQueryActivity  extends BaseActivity{
         toolbar.setTitle("");
         tv_toolbar.setText("报警查询");
         setSupportActionBar(toolbar);
+        button_menu.setBackgroundResource(R.drawable.fanhu);
     }
 
     @Override

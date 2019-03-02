@@ -56,7 +56,7 @@ public class RunDataActivity extends BaseActivity {
         mWdebView.getSettings().setAllowFileAccess(true);
         //开启脚本支持
         mWdebView.getSettings().setJavaScriptEnabled(true);
-        mWdebView.loadUrl("file:///android_asset/myechart.html");
+        mWdebView.loadUrl("file:///android_asset/myechart_type2.html");
     }
 
     @Override
@@ -70,6 +70,26 @@ public class RunDataActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+
+
+        mRightTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String btnText = mRightTitle.getText().toString();
+                if ("曲线".equals(btnText)){
+                    mWdebView.loadUrl("javascript:doCreatChart('line',['2019-03-01 9:00','2019-03-01 11:10','2019-03-01 13:20','2019-03-01 15:30','2019-03-01 17:40','2019-03-01 19:50'],[1.5,2.3, 3.2,1.8,0.2,3.2]);");
+                    contentView.setVisibility(View.GONE);
+                    mWdebView.setVisibility(View.VISIBLE);
+                    mRightTitle.setText("表格");
+                }else {
+                    contentView.setVisibility(View.VISIBLE);
+                    mWdebView.setVisibility(View.GONE);
+                    mRightTitle.setText("曲线");
+                }
+
             }
         });
     }
@@ -119,12 +139,13 @@ public class RunDataActivity extends BaseActivity {
         Log.e("表格加载开始", "当前线程：" + Thread.currentThread());
         mLockTableView.setLockFristColumn(false) //是否锁定第一列
                 .setLockFristRow(true) //是否锁定第一行
-//                .setMaxColumnWidth(100) //列最大宽度
-                .setMinColumnWidth(200) //列最小宽度
+                .setMaxColumnWidth(200) //列最大宽度
+                .setMinColumnWidth(60) //列最小宽度
 //                .setColumnWidth(1,30) //设置指定列文本宽度
 //                .setColumnWidth(0,20) //设置指定列文本宽度
-//                .setColumnWidth(1,50)
-//                .setColumnWidth(0,50)
+                .setColumnWidth(1,200)
+                .setColumnWidth(0,200)
+                .setColumnWidth(2,200)
                 .setMinRowHeight(5)//行最小高度
                 .setMaxRowHeight(3)//行最大高度
                 .setTextViewSize(13) //单元格字体大小

@@ -9,7 +9,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/base40dp"
+            android:layout_height="@dimen/base30dp"
             android:background="#c912b7f5"
             android:orientation="horizontal">
 
@@ -18,7 +18,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/base100dp"
+                android:layout_marginLeft="@dimen/base50dp"
                 android:text="单位："
                 android:textSize="@dimen/base13dp" />
 
@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/base320dp"
+                android:layout_marginLeft="@dimen/base200dp"
                 android:text="构建物:"
                 android:textSize="@dimen/base13dp" />
 
@@ -63,7 +63,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/base40dp"
+            android:layout_height="@dimen/base30dp"
             android:background="#c912b7f5"
             android:layout_marginTop="1dp"
             android:orientation="horizontal">
@@ -73,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/base74dp"
+                android:layout_marginLeft="@dimen/base24dp"
                 android:text="设备仪表："
                 android:textSize="@dimen/base13dp" />
 
@@ -96,7 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/base333dp"
+                android:layout_marginLeft="@dimen/base213dp"
                 android:text="名称:"
                 android:textSize="@dimen/base13dp" />
 
@@ -119,9 +119,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/base40dp"
-        android:background="#c912b7f5"
+        android:layout_height="@dimen/base30dp"
         android:layout_marginTop="1dp"
+        android:background="#c912b7f5"
         android:orientation="horizontal">
 
         <TextView
@@ -129,7 +129,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="@dimen/base74dp"
+            android:layout_marginLeft="@dimen/base24dp"
             android:text="取值类型："
             android:textSize="@dimen/base13dp" />
 
@@ -139,11 +139,11 @@
             android:layout_height="@dimen/base27dp"
             android:layout_gravity="center"
             android:background="@drawable/editext_shape_two"
+            android:drawableRight="@drawable/xiaxia"
             android:editable="false"
             android:paddingLeft="@dimen/base5dp"
             android:text="瞬取值"
             android:textColor="#4c8fd2"
-            android:drawableRight="@drawable/xiaxia"
             android:textSize="@dimen/base12dp" />
 
 
@@ -151,65 +151,66 @@
             android:id="@+id/tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="时间:"
-            android:textSize="@dimen/base13dp"
-            android:textColor="#101010"
             android:layout_gravity="center"
-            android:layout_marginLeft="@dimen/base230dp"
-            />
+            android:layout_marginLeft="@dimen/base150dp"
+            android:text="时间:"
+            android:textColor="#101010"
+            android:textSize="@dimen/base13dp" />
+
         <LinearLayout
             android:layout_width="@dimen/base130dp"
+            android:layout_height="@dimen/base27dp"
             android:layout_gravity="center"
-            android:background="@drawable/editext_shape_two"
-            android:layout_height="@dimen/base30dp">
+            android:background="@drawable/editext_shape_two">
+
             <EditText
                 android:id="@+id/ed_facility_strattime"
                 android:layout_width="@dimen/base100dp"
-                android:textColor="#4c8fd2"
                 android:layout_height="@dimen/base27dp"
-                android:editable="false"
-                android:background="@null"
                 android:layout_gravity="center"
-                android:textSize="@dimen/base15dp"
-                />
+                android:background="@null"
+                android:editable="false"
+                android:textColor="#4c8fd2"
+                android:textSize="@dimen/base15dp" />
+
             <ImageButton
                 android:id="@+id/but_facility_strattime"
                 style="@style/Ibutton"
-                android:layout_gravity="center"
-                />
+                android:layout_gravity="center" />
         </LinearLayout>
+
         <TextView
             android:id="@+id/tv_time2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="至"
-            android:textSize="@dimen/base13dp"
-            android:textColor="#101010"
             android:layout_gravity="center"
             android:layout_marginLeft="@dimen/base13dp"
-            />
+            android:text="至"
+            android:textColor="#101010"
+            android:textSize="@dimen/base13dp" />
+
         <LinearLayout
             android:layout_width="@dimen/base130dp"
-            android:background="@drawable/editext_shape_two"
-            android:layout_marginLeft="@dimen/base10dp"
+            android:layout_height="@dimen/base27dp"
             android:layout_gravity="center"
-            android:layout_height="@dimen/base30dp">
+            android:layout_marginLeft="@dimen/base10dp"
+            android:background="@drawable/editext_shape_two">
+
             <EditText
                 android:id="@+id/ed_facility_endtime"
                 android:layout_width="@dimen/base100dp"
-                android:textColor="#4c8fd2"
                 android:layout_height="@dimen/base27dp"
-                android:editable="false"
-                android:background="@null"
                 android:layout_gravity="center"
-                android:textSize="@dimen/base15dp"
-                />
+                android:background="@null"
+                android:editable="false"
+                android:textColor="#4c8fd2"
+                android:textSize="@dimen/base15dp" />
+
             <ImageButton
                 android:id="@+id/but_facility_endtime"
                 style="@style/Ibutton"
-                android:layout_gravity="center"
-                />
-    </LinearLayout>
+                android:layout_gravity="center" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -221,7 +222,6 @@
 
 
     <WebView
-        android:layout_marginTop="50dp"
         android:id="@+id/facility_wb"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
