@@ -129,16 +129,10 @@
         <activity android:name=".rmonactivity.RmonStateActivity"/>
         <activity android:name=".rmonactivity.RunDataTwoActivity"/>
         <activity android:name=".rmonactivity.RunDataReslutZtActivity"
-            android:screenOrientation="landscape"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             />
         <activity android:name=".rmonactivity.SelectResultActivity"
-            android:screenOrientation="landscape"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             />
         <activity android:name=".rmonactivity.RunDataReslutActivity"
-            android:screenOrientation="landscape"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             />
         <activity android:name=".rmonactivity.RmonDataActivity"/>
         <activity android:name=".purchaseactivity.QrobotActivity"/>
@@ -156,20 +150,12 @@
         <activity android:name=".alarm.StatisticsActivity"></activity>
         <activity android:name=".alarm.AlarmActivity"></activity>
         <activity android:name=".datatable.WringTableActivity"
-            android:screenOrientation="landscape"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             ></activity>
         <activity android:name=".alarm.AlarmQueryActivity"
-            android:screenOrientation="landscape"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             ></activity>
         <activity android:name=".statistics.ContInflowActivity"
-            android:screenOrientation="landscape"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             ></activity>
         <activity android:name=".statistics.InterestCountActivity"
-            android:screenOrientation="landscape"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             >
         </activity>
         <activity android:name=".statistics.BuildCountActivity"></activity>
@@ -177,29 +163,19 @@
         <activity android:name=".statistics.EcectrMothActivity"></activity>
 
         <activity android:name=".statistics.ElectricCountActivity"
-            android:screenOrientation="landscape"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             ></activity>
         <activity android:name=".record.HistoryRecordActivity"></activity>
         <activity android:name=".record.ElectricityCountActivity"
-            android:screenOrientation="landscape"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             ></activity>
         <activity android:name=".record.WaterCountActivity"
-            android:screenOrientation="landscape"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             ></activity>
         <activity android:name=".record.PumpStateActivity"
-            android:screenOrientation="landscape"
-            android:configChanges="keyboardHidden|orientation|screenSize"
+
             ></activity>
         <activity android:name=".record.RunDataActivity"
-            android:screenOrientation="landscape"
-            android:configChanges="keyboardHidden|orientation|screenSize"
+
             ></activity>
         <activity android:name=".record.FacilityStateActivity"
-            android:screenOrientation="landscape"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             ></activity>
         <service
             android:name="com.baidu.location.f"
