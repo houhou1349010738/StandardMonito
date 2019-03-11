@@ -170,10 +170,8 @@
         <activity android:name=".record.WaterCountActivity"
             ></activity>
         <activity android:name=".record.PumpStateActivity"
-
             ></activity>
         <activity android:name=".record.RunDataActivity"
-
             ></activity>
         <activity android:name=".record.FacilityStateActivity"
             ></activity>
