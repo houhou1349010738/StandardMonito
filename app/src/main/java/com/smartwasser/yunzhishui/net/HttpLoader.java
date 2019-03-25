@@ -1,5 +1,7 @@
 package com.smartwasser.yunzhishui.net;
 import android.text.TextUtils;
+import android.util.Log;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -119,6 +121,7 @@ public class HttpLoader {
      */
     private static Request request(int method, String url, Map<String, Object> params, Class<? extends RBResponse> clazz, int requestCode, ResponseListener listener, boolean isCache) {
         Request request = mInFlightRequests.get(requestCode);
+        Log.d(listener+"NetWorkUrl:",url);
         if (request == null) {
             request = makeGsonRequest(method, url + buildGetParam(params), null, clazz, requestCode, listener, isCache);
             //首先尝试解析本地缓存供界面显示，然后再发起网络请求

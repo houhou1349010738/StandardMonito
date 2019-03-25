@@ -172,6 +172,25 @@ public class RmonMenuResponse extends RBResponse{
             return priority;
         }
 
+        @Override
+        public String toString() {
+            return "DataBean{" +
+                    "appid='" + appid + '\'' +
+                    ", chfuncmid=" + chfuncmid +
+                    ", funccode='" + funccode + '\'' +
+                    ", funcdesc='" + funcdesc + '\'' +
+                    ", funcnamech='" + funcnamech + '\'' +
+                    ", funcnameen='" + funcnameen + '\'' +
+                    ", funcurl='" + funcurl + '\'' +
+                    ", icon='" + icon + '\'' +
+                    ", id='" + id + '\'' +
+                    ", isapp='" + isapp + '\'' +
+                    ", ismenu=" + ismenu +
+                    ", parentid='" + parentid + '\'' +
+                    ", priority=" + priority +
+                    '}';
+        }
+
         public void setPriority(int priority) {
             this.priority = priority;
         }

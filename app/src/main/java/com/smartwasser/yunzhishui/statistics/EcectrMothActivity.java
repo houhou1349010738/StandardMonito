@@ -26,7 +26,7 @@ import java.util.List;
  * Created by 15810 on 2019/2/27.
  */
 
-public class EcectrMothActivity extends BaseActivity {
+public class EcectrMothActivity extends BaseActivity implements View.OnClickListener{
     private List<String> mlist;
     private ListView minitListView;
     private LinearLayout contentView;
@@ -269,5 +269,10 @@ public class EcectrMothActivity extends BaseActivity {
         DisplayUtil.screenhightPx = dm.heightPixels;
         DisplayUtil.screenWidthDip = DisplayUtil.px2dip(getApplicationContext(), dm.widthPixels);
         DisplayUtil.screenHightDip = DisplayUtil.px2dip(getApplicationContext(), dm.heightPixels);
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 }

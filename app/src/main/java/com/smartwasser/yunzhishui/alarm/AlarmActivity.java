@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.android.volley.VolleyError;
 import com.rmondjone.locktableview.DisplayUtil;
 import com.rmondjone.locktableview.LockTableView;
 import com.rmondjone.xrecyclerview.ProgressStyle;
@@ -21,24 +22,29 @@ import com.smartwasser.yunzhishui.Activity.BaseActivity;
 import com.smartwasser.yunzhishui.R;
 import com.smartwasser.yunzhishui.adapter.alarm.Tadapter;
 import com.smartwasser.yunzhishui.alarmbean.ContentBean;
+import com.smartwasser.yunzhishui.bean.RBResponse;
+import com.smartwasser.yunzhishui.bean.RmonMenuResponse;
 import com.smartwasser.yunzhishui.datatable.WringTableActivity;
+import com.smartwasser.yunzhishui.net.HttpLoader;
+import com.smartwasser.yunzhishui.utils.ConstantsYunZhiShui;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 /**
  * Created by 15810 on 2019/2/20.
  */
 
-public class AlarmActivity extends BaseActivity {
+public class AlarmActivity extends BaseActivity implements HttpLoader.ResponseListener{
     private ListView mListView;
     private List<String> mlist;
     private Toolbar toolbar;
     private ImageButton button_menu;
     private TextView tv_toolbar;
-
+    private RmonMenuResponse menuResponse;
 
     @Override
     protected int initContentView() {
@@ -94,13 +100,16 @@ public class AlarmActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+        HashMap<String, Object> prams = new HashMap<>();
+        prams.put("id","138372619389084886281");
+        HttpLoader.get(ConstantsYunZhiShui.URL_ZXJCMENULIST, prams,
+                RmonMenuResponse.class, ConstantsYunZhiShui.REQUEST_CODE_ZXJCMENULIST, this).setTag(this);
         mlist = new ArrayList<>();
         mlist.add("实时报警信息");
         mlist.add("历史报警查询");
         mlist.add("重要报警提示");
         mlist.add("紧急报警");
-        Tadapter tadapter = new Tadapter(this, mlist);
-        mListView.setAdapter(tadapter);
+
 
 
 
@@ -110,4 +119,19 @@ public class AlarmActivity extends BaseActivity {
     }
 
 
+    @Override
+    public void onGetResponseSuccess(int requestCode, RBResponse response) {
+        if (requestCode == ConstantsYunZhiShui.REQUEST_CODE_ZXJCMENULIST
+                && response instanceof RmonMenuResponse) {
+            menuResponse = (RmonMenuResponse) response;
+            List<RmonMenuResponse.DataBean> data = menuResponse.getData();
+            Tadapter tadapter = new Tadapter(this, data);
+            mListView.setAdapter(tadapter);
+        }
+    }
+
+    @Override
+    public void onGetResponseError(int requestCode, VolleyError error) {
+
+    }
 }

@@ -8,6 +8,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +17,15 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.VolleyError;
 import com.smartwasser.yunzhishui.Activity.DataMainActivity;
 import com.smartwasser.yunzhishui.alarm.AlarmActivity;
 import com.smartwasser.yunzhishui.alarm.StatisticsActivity;
+import com.smartwasser.yunzhishui.alarmbean.PageBeanDto;
+import com.smartwasser.yunzhishui.bean.LoginResponse;
+import com.smartwasser.yunzhishui.bean.RBResponse;
 import com.smartwasser.yunzhishui.floodcontrolactivity.FloodcontrolActivity;
+import com.smartwasser.yunzhishui.net.HttpLoader;
 import com.smartwasser.yunzhishui.productionactivity.ProductionActivity;
 import com.smartwasser.yunzhishui.purchaseactivity.PurchaseActivity;
 import com.smartwasser.yunzhishui.record.HistoryRecordActivity;
@@ -27,6 +33,7 @@ import com.smartwasser.yunzhishui.rmonactivity.RmonActivity;
 import com.smartwasser.yunzhishui.sludgeactivity.TrafficMainActivity;
 import com.smartwasser.yunzhishui.R;
 import com.smartwasser.yunzhishui.deviceactivity.DeviceActivity;
+import com.smartwasser.yunzhishui.utils.ConstantsYunZhiShui;
 
 /**
  * Created by huangmengjie on 2016/home/28 0028.
@@ -59,6 +66,7 @@ public class HomePager extends BasePager implements SwipeRefreshLayout.OnRefresh
     }
     @Override
     public void initDatas(){
+
         downRefresh.setOnRefreshListener(this);
         /**
          * 设置下拉刷新的颜色
@@ -74,6 +82,8 @@ public class HomePager extends BasePager implements SwipeRefreshLayout.OnRefresh
         adapter = new MyAdapter(context, true);
         recyclerView.setAdapter(adapter);
     }
+
+
     @Override
     public void onRefresh() {
         Toast.makeText(context, "正在刷新,请稍等", Toast.LENGTH_SHORT).show();
@@ -84,6 +94,8 @@ public class HomePager extends BasePager implements SwipeRefreshLayout.OnRefresh
             }
         },5000);
     }
+
+
     class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         private Context context;
         private boolean flag;

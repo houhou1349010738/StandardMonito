@@ -7,6 +7,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.smartwasser.yunzhishui.R;
+import com.smartwasser.yunzhishui.bean.RmonMenuResponse;
 
 import java.util.List;
 
@@ -17,12 +18,12 @@ import java.util.List;
 public class Tadapter  extends BaseAdapter{
     private Context mContent;
 
-    public Tadapter(Context mContent, List<String> mList) {
+    public Tadapter(Context mContent, List<RmonMenuResponse.DataBean> mList) {
         this.mContent = mContent;
         this.mList = mList;
     }
 
-    private List<String> mList;
+    private List<RmonMenuResponse.DataBean> mList;
     @Override
     public int getCount() {
         return mList!=null?mList.size():0;
@@ -49,7 +50,7 @@ public class Tadapter  extends BaseAdapter{
         }else {
           viewHolder = (ViewHolder) view.getTag();
         }
-        viewHolder.tv.setText(mList.get(i));
+        viewHolder.tv.setText(mList.get(i).getFuncnamech());
         return view;
     }
     class ViewHolder{

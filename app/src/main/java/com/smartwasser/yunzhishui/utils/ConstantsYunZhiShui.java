@@ -5,6 +5,7 @@ package com.smartwasser.yunzhishui.utils;
 public class ConstantsYunZhiShui {
                 /**数据填报系统*/
       public static final String URL_SERVER ="http://www.yunzhishui.com/scsj/appsso/";
+
        /**登录页请求*/
       public static final String URL_LOGIN="http://ghce.5166.info:9180/bzjc/appsso/login/";
 //      public static final String URL_LOGIN="http://www.yunzhishui.com/portal/appsso/login/";
@@ -404,7 +405,7 @@ public class ConstantsYunZhiShui {
     public static final String URL_ZXJCMENULIST=BASE_URL+"/dh/menuList/";
     public static final int REQUEST_CODE_ZXJCMENULIST=106;
                              /**清河web页*/
-    public static final String URL_ZXJCMONITOR=URL_SERVERssssss+"monitor/f";
+    public static final String URL_ZXJCMONITOR=URL_SERVERssssss;
                         /**单位*/
     public static final String URL_ZXJCBUSINESS=URL_SERVERssssss+"/ComboboxApp/findBuComboxList/";
     public static final int REQUEST_CODE_ZXJCBUSINESS=107;
@@ -457,4 +458,9 @@ public class ConstantsYunZhiShui {
     public static final int REQUEST_CODE_ONLINEACHIE=121;
 
 
+
+    public static interface NEWSHUIZHIYUN{
+        int PAGECODE=1008;
+          String PAGEBASEURL=BASE_URL+"/dh/menuList";
+    }
 }
