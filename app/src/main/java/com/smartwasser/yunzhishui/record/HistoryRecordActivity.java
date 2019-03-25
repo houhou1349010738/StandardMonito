@@ -32,6 +32,7 @@ public class HistoryRecordActivity extends BaseActivity implements HttpLoader.Re
     private ImageButton button_menu;
     private TextView tv_toolbar;
     private RmonMenuResponse menuResponse;
+    private List<RmonMenuResponse.DataBean> data;
 
     @Override
     protected int initContentView() {
@@ -61,30 +62,31 @@ public class HistoryRecordActivity extends BaseActivity implements HttpLoader.Re
         });
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            Intent intent = null;
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                RmonMenuResponse.DataBean dataBean = data.get(i);
+
                 switch (i) {
                     case 0:
-                        Intent intent = new Intent(HistoryRecordActivity.this,RunDataActivity.class);
-                        startActivity(intent);
+                         intent = new Intent(HistoryRecordActivity.this,RunDataActivity.class);
                         break;
                     case 1:
-                        Intent intent2 = new Intent(HistoryRecordActivity.this,FacilityStateActivity.class);
-                        startActivity(intent2);
+                         intent = new Intent(HistoryRecordActivity.this,FacilityStateActivity.class);
                         break;
                     case 2:
-                        Intent intent3 = new Intent(HistoryRecordActivity.this,PumpStateActivity.class);
-                        startActivity(intent3);
+                         intent = new Intent(HistoryRecordActivity.this,PumpStateActivity.class);
                         break;
                     case 3:
-                        Intent intent4 = new Intent(HistoryRecordActivity.this,WaterCountActivity.class);
-                        startActivity(intent4);
+                         intent = new Intent(HistoryRecordActivity.this,WaterCountActivity.class);
                         break;
                     case 4:
-                        Intent intent5 = new Intent(HistoryRecordActivity.this,ElectricityCountActivity.class);
-                        startActivity(intent5);
+                         intent = new Intent(HistoryRecordActivity.this,ElectricityCountActivity.class);
                         break;
                 }
+                intent.putExtra("title",dataBean);
+                startActivity(intent);
             }
         });
     }
@@ -111,7 +113,7 @@ public class HistoryRecordActivity extends BaseActivity implements HttpLoader.Re
         if (requestCode == ConstantsYunZhiShui.REQUEST_CODE_ZXJCMENULIST
                 && response instanceof RmonMenuResponse) {
             menuResponse = (RmonMenuResponse) response;
-            List<RmonMenuResponse.DataBean> data = menuResponse.getData();
+            data = menuResponse.getData();
             Tadapter tadapter = new Tadapter(this, data);
             mListView.setAdapter(tadapter);
         }

@@ -61,29 +61,29 @@ public class StatisticsActivity extends BaseActivity implements HttpLoader.Respo
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                List<RmonMenuResponse.DataBean> data = menuResponse.getData();
+                RmonMenuResponse.DataBean dataBean = data.get(i);
+                Intent intent = null;
                 switch (i) {
                     case 0:
-                        Intent intent = new Intent(StatisticsActivity.this,ContInflowActivity.class);
-                        startActivity(intent);
+                        intent   = new Intent(StatisticsActivity.this,ContInflowActivity.class);
                         break;
                     case 1:
-                        Intent intent2 = new Intent(StatisticsActivity.this,InterestCountActivity.class);
-                        startActivity(intent2);
+                        intent = new Intent(StatisticsActivity.this,InterestCountActivity.class);
                         break;
                     case 2:
-                        Intent intent3 = new Intent(StatisticsActivity.this,ElectricCountActivity.class);
-                        startActivity(intent3);
+                        intent = new Intent(StatisticsActivity.this,ElectricCountActivity.class);
                         break;
                     case 3:
-                        Intent intent4= new Intent(StatisticsActivity.this,EcectrMothActivity.class);
-                        startActivity(intent4);
+                        intent= new Intent(StatisticsActivity.this,EcectrMothActivity.class);
                         break;
                     case 4:
-                        Intent intent5 = new Intent(StatisticsActivity.this,BuildCountActivity.class);
-                        startActivity(intent5);
-                        break;
+                        intent = new Intent(StatisticsActivity.this,BuildCountActivity.class);
 
+                        break;
                 }
+                intent.putExtra("title",dataBean);
+                startActivity(intent);
             }
         });
 

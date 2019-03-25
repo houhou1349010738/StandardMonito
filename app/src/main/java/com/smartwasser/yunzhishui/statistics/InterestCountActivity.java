@@ -21,6 +21,7 @@ import com.rmondjone.xrecyclerview.XRecyclerView;
 import com.smartwasser.yunzhishui.Activity.BaseActivity;
 import com.smartwasser.yunzhishui.R;
 import com.smartwasser.yunzhishui.alarmbean.IntersetBean;
+import com.smartwasser.yunzhishui.bean.RmonMenuResponse;
 import com.smartwasser.yunzhishui.utils.DialogTimeUtils;
 import com.smartwasser.yunzhishui.utils.ListViewUtils;
 import com.smartwasser.yunzhishui.utils.PopupWindowUtils;
@@ -85,7 +86,8 @@ public class InterestCountActivity extends BaseActivity {
         button_menu.setVisibility(View.VISIBLE);
         button_menu.setBackgroundResource(R.drawable.fanhu);
         toolbar.setTitle("");
-        tv_toolbar.setText("全厂设备利率里、完好率");
+        RmonMenuResponse.DataBean dataBean = (RmonMenuResponse.DataBean) getIntent().getSerializableExtra("title");
+        tv_toolbar.setText(dataBean.getFuncnamech());
         setSupportActionBar(toolbar);
         mRightTitle.setText("报表");
         mWebView.loadUrl("javascript:doCreatChart('bar',[89,78,77,44,66,83,56,26,97,56,12,48]);");
