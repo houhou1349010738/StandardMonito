@@ -129,6 +129,10 @@ public class RmonPager  extends BasePager implements HttpLoader.ResponseListener
                                     intent3.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                     mContext.startActivity(intent3);
                                     break;
+                                    /*點位監測的頁面*/
+                                case "e85b0d3a43ca11e9ae82089e01f500fd":
+
+                                    break;
                             }
                         }
                     }
